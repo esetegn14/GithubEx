@@ -23,11 +23,13 @@
     //AFNetworking Test
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    [manager GET:@"http://headers.jsontest.com/" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager
+     //Add JSON 
+     GET:@"http://headers.jsontest.com/" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *responseDic = responseObject;
         
         for(NSString *s in responseDic){
-            NSLog(@"KEY: %@ | VALUE: %@",s,[responseDic objectForKey:s]);
+            NSLog(@"Key: %@ | Value: %@",s,[responseDic objectForKey:s]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
