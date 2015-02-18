@@ -29,7 +29,7 @@
         NSDictionary *responseDic = responseObject;
         
         for(NSString *s in responseDic){
-            NSLog(@"Key: %@ | Value: %@",s,[responseDic objectForKey:s]);
+            NSLog(@"KEY: %@ | VALUE: %@",s,[responseDic objectForKey:s]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
